@@ -15,18 +15,13 @@ import Retail from "./components/Retail";
 import Ring from "./components/Ring";
 import product4 from "./assets/product4.jpg";
 import product5 from "./assets/product5.jpg";
+import { useState } from "react";
 
 function App() {
+  const [count , setCount]= useState(0)
   const featuresList = ["Fast Shipping", "Quality Materials", "Trendy Designs"];
-  const callback = () => {
-    console.log("ayesha");
-  }
 
-  let count = 0;
-  const callbackexapmle = (testfun) => {
-testfun()
-  };
-callbackexapmle(callback);
+
 
   return (
     <>
@@ -98,7 +93,12 @@ callbackexapmle(callback);
           >
             <h2>Discover the Latest Trends</h2>
             <p>Style that speaks to your soul</p>
-            <a>Learn More About Us</a>
+            <button className="btn btn-primary" onClick={() =>{
+            setCount(count+1)
+              
+               console.log ("count", count);
+            
+            }}>Learn More About Us {count}</button>
           </div>
         </div>
         <div
@@ -153,54 +153,54 @@ callbackexapmle(callback);
         </div>
         <button
           className=" btn btn-primary"
-          onClick={() => {
-            if (count == 1) {
-              console.log(1);
-            }
-            if (count == 2) {
-              console.log(2);
-            }
-            if (count == 3) {
-              console.log("Fizz");
-            }
-            if (count == 4) {
-              console.log(4);
-            }
-            if (count == 5) {
-              console.log("Buzz");
-            }
-            if (count == 6) {
-              console.log("Fizz");
-            }
-            if (count == 7) {
-              console.log(7);
-            }
-            if (count == 8) {
-              console.log(8);
-            }
-            if (count == 9) {
-              console.log("Fizz");
-            }
-            if (count == 10) {
-              console.log("Buzz");
-            }
-            if (count == 11) {
-              console.log(11);
-            }
-            if (count == 12) {
-              console.log("Fizz");
-            }
-            if (count == 13) {
-              console.log(13);
-            }
-            if (count == 14) {
-              console.log(14);
-            }
-            if (count == 15) {
-              console.log("FizzBuzz");
-            }
-            count = count + 1;
-          }}
+          // onClick={() => {
+          //   if (count == 1) {
+          //     console.log(1);
+          //   }
+          //   if (count == 2) {
+          //     console.log(2);
+          //   }
+          //   if (count == 3) {
+          //     console.log("Fizz");
+          //   }
+          //   if (count == 4) {
+          //     console.log(4);
+          //   }
+          //   if (count == 5) {
+          //     console.log("Buzz");
+          //   }
+          //   if (count == 6) {
+          //     console.log("Fizz");
+          //   }
+          //   if (count == 7) {
+          //     console.log(7);
+          //   }
+          //   if (count == 8) {
+          //     console.log(8);
+          //   }
+          //   if (count == 9) {
+          //     console.log("Fizz");
+          //   }
+          //   if (count == 10) {
+          //     console.log("Buzz");
+          //   }
+          //   if (count == 11) {
+          //     console.log(11);
+          //   }
+          //   if (count == 12) {
+          //     console.log("Fizz");
+          //   }
+          //   if (count == 13) {
+          //     console.log(13);
+          //   }
+          //   if (count == 14) {
+          //     console.log(14);
+          //   }
+          //   if (count == 15) {
+          //     console.log("FizzBuzz");
+          //   }
+          //   count = count + 1;
+          // }}
         >
           counter
         </button>
