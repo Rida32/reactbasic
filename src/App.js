@@ -19,9 +19,21 @@ import { useState } from "react";
 
 function App() {
   const [count , setCount]= useState(0)
+  const [text, setText] = useState("")
   const featuresList = ["Fast Shipping", "Quality Materials", "Trendy Designs"];
 
+  const againClick = () => {
+    setCount(count+1);
+   if (count % 3 == 0 && count % 5 == 0 ){
+   setText("FizzBuzz");
+   } else if (count % 3 == 0){
+   setText("Fizz");
+   } else if (count % 5 == 0){
+    setText("Buzz");
+   } else {setText("");
+   }
 
+  };
 
   return (
     <>
@@ -93,12 +105,9 @@ function App() {
           >
             <h2>Discover the Latest Trends</h2>
             <p>Style that speaks to your soul</p>
-            <button className="btn btn-primary" onClick={() =>{
-            setCount(count+1)
-              
-               console.log ("count", count);
-            
-            }}>Learn More About Us {count}</button>
+            <button className="btn btn-primary" onClick={againClick}>
+
+            Learn More About Us {text==""?count:text}</button>
           </div>
         </div>
         <div
